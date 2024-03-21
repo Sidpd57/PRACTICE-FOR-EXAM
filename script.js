@@ -96,7 +96,15 @@ const resetErrorInputs = () => {
     address.classList.remove('is-invalid');
 }
 
-let users = [];
+// let users = [];
+const setLocalStorage = (users) => {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+const getLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('users'))||[];
+}
+
 const createUser = () => {
     let educations = [];
     let rows = document.querySelectorAll('#educational-table-body tr');
@@ -121,12 +129,15 @@ const createUser = () => {
         email: email.value,
         educations: educations
     }
+    let users = getLocalStorage();
     users.push(user);
+    setLocalStorage(users);
     // render users 
     renderUsers();
 }
 
 const renderUsers= () => {
+    let users = getLocalStorage();
     tbody.innerHTML= users.map((element, index)=> {
         let {firstName,lastName, dateOfBirth, address, email} = element;
         return`<tr>
@@ -144,7 +155,7 @@ const renderUsers= () => {
 }
 
 const updateUser = (index) => {
-
+    let users = getLocalStorage();
     let currentuser = users[index];
     createForm.click()
 
@@ -208,7 +219,7 @@ const updateUser = (index) => {
 }
 
 const updateUserToList = () => {
-    console.log('inside updatedUserToList')
+
     let index = submitBtn.getAttribute('data-user-index');
     if(index!=-1){
         let educations = [];
@@ -234,7 +245,9 @@ const updateUserToList = () => {
             email: email.value,
             educations: educations
         }
+        let users = getLocalStorage();
         users[index] = currentUser;
+        setLocalStorage(users);
         alert('user updated!');
     }
     // render users 
@@ -244,7 +257,9 @@ const updateUserToList = () => {
 const deleteUser = (index) => {
     const result = confirm('Are you sure?');
     if(result) {
+        let users = getLocalStorage()
         users.splice(index,1);
+        setLocalStorage(users);
         // render users 
         renderUsers();
     }
