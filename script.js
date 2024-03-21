@@ -20,6 +20,20 @@ const graduationYearError = document.getElementById('graduationYearError');
 const addressError = document.getElementById('AddressError');
 const emailError = document.getElementById('emailError');
 
+// let users = [];
+const setLocalStorage = (users) => {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+const getLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('users'))||[];
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // This function will be called when the DOM is fully loaded
+    renderUsers();
+});
+
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
     formValidation();
@@ -96,14 +110,7 @@ const resetErrorInputs = () => {
     address.classList.remove('is-invalid');
 }
 
-// let users = [];
-const setLocalStorage = (users) => {
-    localStorage.setItem('users', JSON.stringify(users));
-}
 
-const getLocalStorage = () => {
-    return JSON.parse(localStorage.getItem('users'))||[];
-}
 
 const createUser = () => {
     let educations = [];
