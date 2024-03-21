@@ -11,105 +11,7 @@
 <body>
     
   
-    <!-- Modal -->
-    <form class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal- accordion   fs-5" id="staticBackdropLabel">Student Form</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- personal info -->
-                    <section class="personal-info">
-                        <div class="container text-center">
-                            <div class="row">
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="firstName" class="form-label text-start w-100 fw-medium">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="John">
-                                    <div class="text-danger text-start" id="firstNameError"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="lastName" class="form-label text-start w-100 fw-medium">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Doe">
-                                    <div class="text-danger text-start" id="lastNameError"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="dateOfBirth" class="form-label text-start w-100 fw-medium">D.O.B</label>
-                                    <input type="date" class="form-control" id="dateOfBirth">
-                                    <div class="text-danger text-start" id="dateOfBirthError"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="graduationYear" class="form-label text-start w-100 fw-medium">Graduation Year</label>
-                                    <input type="date" class="form-control" id="graduationYear">
-                                    <div class="text-danger text-start" id="graduationYearError"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="Address" class="form-label text-start w-100 fw-medium">Address</label>
-                                    <input type="text" class="form-control" id="Address" placeholder="Your Address">
-                                    <div class="text-danger text-start" id="AddressError"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-6">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label text-start w-100 fw-medium">E-mail</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Your Address">
-                                    <div class="text-danger text-start" id="emailError"></div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- educational info -->
-                    <section class="middle-section my-5 d-flex justify-content-between">
-                        <h3 class="h3">Educational Fields</h3>
-                        <button class="btn btn-outline-primary">
-                            <i class="fa-solid fa-plus fa-xl"></i>
-                        </button>
-                    </section>
-                    <section class="table-responsive">
-                        <table class="table educational-table">
-                            <thead>
-                            <tr>
-                                <th scope="col">University</th>
-                                <th scope="col">Degree</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">Passout Year</th>
-                                <th scope="col">Grade</th>
-                                <th scope="col">Backlog</th>
-                                <th scope="col">Remove</th>
-                            </tr>
-                            </thead>
-                            <tbody class="educational-table-body" id="educational-table-body">
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><button class="btn btn-outline-danger"><i class="fa-solid fa-minus fa-xl"></i></button></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Info</button>
-                </div>
-            </div>
-        </div>
-    </form>
+    
     <div id="main" class="main w-75 mx-auto mt-10 p-4 rounded-3">
         <!-- Button trigger modal -->
         <header id="header" class="header d-flex justify-content-between mb-5">
@@ -118,6 +20,105 @@
                 Create Form
             </button>
         </header>
+        <!-- Modal -->
+        <form class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal- accordion   fs-5" id="staticBackdropLabel">Student Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- personal info -->
+                        <section class="personal-info">
+                            <div class="container text-center">
+                                <div class="row">
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="firstName" class="form-label text-start w-100 fw-medium">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="John">
+                                        <div class="text-danger text-start" id="firstNameError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="lastName" class="form-label text-start w-100 fw-medium">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                                        <div class="text-danger text-start" id="lastNameError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="dateOfBirth" class="form-label text-start w-100 fw-medium">D.O.B</label>
+                                        <input type="date" class="form-control" id="dateOfBirth">
+                                        <div class="text-danger text-start" id="dateOfBirthError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="graduationYear" class="form-label text-start w-100 fw-medium">Graduation Year</label>
+                                        <input type="date" class="form-control" id="graduationYear">
+                                        <div class="text-danger text-start" id="graduationYearError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="Address" class="form-label text-start w-100 fw-medium">Address</label>
+                                        <input type="text" class="form-control" id="Address" placeholder="Your Address">
+                                        <div class="text-danger text-start" id="AddressError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label text-start w-100 fw-medium">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Your Address">
+                                        <div class="text-danger text-start" id="emailError"></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- educational info -->
+                        <section class="middle-section my-5 d-flex justify-content-between">
+                            <h3 class="h3">Educational Fields</h3>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa-solid fa-plus fa-xl"></i>
+                            </button>
+                        </section>
+                        <section class="table-responsive">
+                            <table class="table educational-table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">University</th>
+                                    <th scope="col">Degree</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Passout Year</th>
+                                    <th scope="col">Grade</th>
+                                    <th scope="col">Backlog</th>
+                                    <th scope="col">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody class="educational-table-body" id="educational-table-body">
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td><button class="btn btn-outline-danger"><i class="fa-solid fa-minus fa-xl"></i></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Info</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="table-responsive">
             <table class="table">
                 <thead>

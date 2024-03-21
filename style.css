@@ -8,10 +8,11 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    height: 100vh;
 }
 
 .main {
-    border: 2px solid red ;
+    border: 2px solid red;
 }
 
 .mt-10{
