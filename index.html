@@ -7,22 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2604aff8b6.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./google-forms.png" type="image/x-icon">
 </head>
-<body>
-    
-  
-    
+<body> 
     <div id="main" class="main w-75 mx-auto mt-10 p-4 rounded-3">
         <!-- Button trigger modal -->
         <header id="header" class="header d-flex justify-content-between mb-5">
             <h2 class="h2">Student Form</h2>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" id="create-form" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Create Form
             </button>
         </header>
         <!-- Modal -->
-        <form class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
+        <form class="form modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal- accordion   fs-5" id="staticBackdropLabel">Student Form</h1>
@@ -36,42 +34,42 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="firstName" class="form-label text-start w-100 fw-medium">First Name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="John">
+                                        <input type="text" class="form-control" id="firstName" placeholder="John" autocomplete="given-name">
                                         <div class="text-danger text-start" id="firstNameError"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="lastName" class="form-label text-start w-100 fw-medium">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Doe" autocomplete="family-name">
                                         <div class="text-danger text-start" id="lastNameError"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="dateOfBirth" class="form-label text-start w-100 fw-medium">D.O.B</label>
-                                        <input type="date" class="form-control" id="dateOfBirth">
+                                        <input type="date" class="form-control" id="dateOfBirth" min="2014-02-09" autocomplete="on">
                                         <div class="text-danger text-start" id="dateOfBirthError"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="graduationYear" class="form-label text-start w-100 fw-medium">Graduation Year</label>
-                                        <input type="date" class="form-control" id="graduationYear">
+                                        <input type="date" class="form-control" id="graduationYear" autocomplete="on">
                                         <div class="text-danger text-start" id="graduationYearError"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="Address" class="form-label text-start w-100 fw-medium">Address</label>
-                                        <input type="text" class="form-control" id="Address" placeholder="Your Address">
+                                        <input type="text" class="form-control" id="Address" placeholder="Your Address" autocomplete="street-address">
                                         <div class="text-danger text-start" id="AddressError"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-6">
                                     <div class="mb-3">
                                         <label for="email" class="form-label text-start w-100 fw-medium">E-mail</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Your Address">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email id" autocomplete="email">
                                         <div class="text-danger text-start" id="emailError"></div>
                                     </div>
                                 </div>
@@ -81,7 +79,7 @@
                         <!-- educational info -->
                         <section class="middle-section my-5 d-flex justify-content-between">
                             <h3 class="h3">Educational Fields</h3>
-                            <button class="btn btn-outline-primary">
+                            <button type="button" class="btn btn-outline-primary" onclick="addEducationRow()">
                                 <i class="fa-solid fa-plus fa-xl"></i>
                             </button>
                         </section>
@@ -89,32 +87,101 @@
                             <table class="table educational-table">
                                 <thead>
                                 <tr>
-                                    <th scope="col">University</th>
-                                    <th scope="col">Degree</th>
-                                    <th scope="col">Start Date</th>
-                                    <th scope="col">Passout Year</th>
-                                    <th scope="col">Grade</th>
-                                    <th scope="col">Backlog</th>
-                                    <th scope="col">Remove</th>
+                                    <th scope="col"><label for="university" class="form-label text-start w-100 fw-medium">University</label></th>
+                                    <th scope="col"><label for="degree" class="form-label text-start w-100 fw-medium">Degree</label></th>
+                                    <th scope="col"><label for="start-date" class="form-label text-start w-100 fw-medium">Start Date</label></th>
+                                    <th scope="col"><label for="passout-year" class="form-label text-start w-100 fw-medium">Passout Year</label></th>
+                                    <th scope="col"><label for="grade" class="form-label text-start w-100 fw-medium">Grade</label></th>
+                                    <th scope="col"><label for="backlog" class="form-label text-start w-100 fw-medium">Backlog</label></th>
+                                    <th scope="col"><label class="form-label text-start w-100 fw-medium">Remove</label></th>
                                 </tr>
                                 </thead>
                                 <tbody class="educational-table-body" id="educational-table-body">
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td><button class="btn btn-outline-danger"><i class="fa-solid fa-minus fa-xl"></i></button></td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control university" placeholder="GTU" autocomplete="on">
+                                                <div class="text-danger text-start universityError"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control degree" placeholder="CPI" autocomplete="on">
+                                                <div class="text-danger text-start degreeError"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="date" class="form-control start-date" autocomplete="on">
+                                                <div class="text-danger text-start start-date-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="date" class="form-control passout-year"autocomplete="on">
+                                                <div class="text-danger text-start passout-year-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control grade" autocomplete="on" min="45" max="100" step="0.01">
+                                                <div class="text-danger text-start grade-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control backlog" autocomplete="on" min="0" max="10">
+                                                <div class="text-danger text-start backlog-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td><button type="button" class="btn btn-outline-danger" disabled><i class="fa-solid fa-minus fa-xl"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control university" placeholder="GTU" autocomplete="on">
+                                                <div class="text-danger text-start universityError"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control degree" placeholder="CPI" autocomplete="on">
+                                                <div class="text-danger text-start degreeError"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="date" class="form-control start-date" autocomplete="on">
+                                                <div class="text-danger text-start start-date-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="date" class="form-control passout-year" autocomplete="on">
+                                                <div class="text-danger text-start passout-year-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control grade" autocomplete="on" min="45" max="100" step="0.01">
+                                                <div class="text-danger text-start grade-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mb-3">
+                                                <input type="number" class="form-control backlog" autocomplete="on" min="0" max="10">
+                                                <div class="text-danger text-start backlog-Error"></div>
+                                            </div>
+                                        </td>
+                                        <td><button type="button" class="btn btn-outline-danger" disabled><i class="fa-solid fa-minus fa-xl"></i></button></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </section>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add Info</button>
+                        <button type="button" id="close-btn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary" data-action="add">Add Info</button>
                     </div>
                 </div>
             </div>
@@ -133,23 +200,15 @@
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><button class="btn btn-outline-primary"><i class="fa-solid fa-eye fa-xl"></i></button></td>
-                    <td><button class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square fa-xl"></i></button></td>
-                    <td><button class="btn btn-outline-primary"><i class="fa-solid fa-trash-can fa-eye fa-xl"></i></button></td>
-                  </tr>
+                <tbody id="tbody">
+
                 </tbody>
             </table>
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="script.js"></script>
 </html>
 
 

@@ -19,6 +19,7 @@ body {
     margin-top: 7rem;
 }
 
+.modal-body::-webkit-scrollbar { width: 0 !important }
 
 /* EADFB4
 9BB0C1
